@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Epilogue', sans-serif;
+}
+
+:root {
+  --mainWidth: 90%;
+  --mainMargin: 0 auto;
+}
+
+p{
+  color: hsl(0, 0%, 41%);
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  width: 100%;
+  background-color: transparent;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  padding: 15px;
+}
+
+button.active {
+  border: 2px solid #000;
+}

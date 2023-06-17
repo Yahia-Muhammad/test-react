@@ -1,0 +1,163 @@
+li {
+  display: block;
+  margin: 15px 0;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: var(--mainWidth);
+  margin: var(--mainMargin);
+  padding: 25px 0;
+  position: relative;
+}
+
+header .in-header {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 65%;
+  background-color: #fff;
+  padding: 20px 25px;
+  transform: translate(100%, 0%);
+}
+
+.small-list {
+  padding: 15px 20px 1px 20px;
+}
+
+.show-header {
+  transition: transform 0.5s;
+  transform: translate(0%, 0%) !important;
+}
+
+.hide-header {
+  transition: transform 0.5s;
+  transform: translate(100%, 0%) !important;
+}
+
+header .show-header::before {
+  content: "";
+  background-color: #00000090;
+  width: 200%;
+  height: 100%;
+  position: absolute;
+  left: -200%;
+  top: 0;
+  animation: show-bg 0.5s linear forwards;
+}
+
+header .hide-header::before {
+  content: "";
+  background-color: #00000090;
+  width: 200%;
+  height: 100%;
+  position: absolute;
+  left: -200%;
+  top: 0;
+  animation: hide-bg 0.5s linear forwards;
+}
+
+@keyframes show-bg {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hide-bg {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+header .closeMenu {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.click {
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  header {
+    justify-content: normal
+  }
+
+  header button {
+    border-radius: 10px;
+    padding: 10px 25px;
+  }
+
+  .openMenu {
+    display: none;
+  }
+
+  header .closeMenu {
+    display: none;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0px 15px;
+  }
+
+  header .in-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    right: 0;
+    top: 0;
+    height: auto;
+    width: inherit;
+    background-color: transparent;
+    padding: 0px 0px;
+    transform: translate(0%, 0%);
+    align-items: center;
+    margin-left: 30px;
+  }
+
+  .small-list {
+    padding: 15px 30px;
+    position: absolute;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 5px 5px 20px #666666, 0px 0px 0px #ffffff;
+  }
+
+  .small-list li {
+    margin: 7px 0px;
+  }
+
+  header .show-header::before {
+    display: none !important;
+  }
+
+  header .hide-header::before {
+    display: none !important;
+  }
+
+  .log-btn {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
